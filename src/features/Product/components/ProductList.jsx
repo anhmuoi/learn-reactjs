@@ -1,34 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Box, Grid } from '@material-ui/core';
-import { Skeleton } from '@material-ui/lab';
-import Product from './Product.jsx';
+import React from "react";
+import PropTypes from "prop-types";
+import { Box, Grid } from "@material-ui/core";
+import { Skeleton } from "@material-ui/lab";
+import Product from "./Product.jsx";
 
 ProductList.propTypes = {
-    data: PropTypes.array,
+  data: PropTypes.array,
 };
 
 ProductList.defaultProps = {
-    data: [],
-}
+  data: [],
+};
 
 function ProductList(props) {
+  const { data } = props;
 
-    const {data} = props;
-
-    return (
-       <Box>
-            <Grid container>
-                {data.map((product)=>(
-                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-                       <Product product={product}></Product>
-                    </Grid>
-                ))
-
-                }
-            </Grid>
-       </Box>
-    );
+  return (
+    <Box>
+      <Grid container>
+        {data.map((product) => (
+          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+            <Product product={product}></Product>
+          </Grid>
+          
+        ))}
+      </Grid>
+    </Box>
+  );
 }
 
 export default ProductList;
