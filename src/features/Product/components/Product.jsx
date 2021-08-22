@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Box, Typography } from "@material-ui/core";
 import { STATIC_HOST, THUMBNAIL_PLACEHOLDER } from "constants/commons.js";
+import { useHistory } from "react-router-dom";
 
 Product.propTypes = {
   product: PropTypes.object,
@@ -9,13 +10,17 @@ Product.propTypes = {
 
 function Product(props) {
   const { product } = props;
+  const history = useHistory();
 
   const imageUrl = product.thumbnail
     ? STATIC_HOST + product.thumbnail.url
     : THUMBNAIL_PLACEHOLDER;
 
+    const handleClick  = () => {
+        history.push(`/products/${product.id}`)
+    }
   return (
-    <Box padding={1}>
+    <Box onClick={handleClick} padding={1}>
       <Box padding={1} minHeight='215px'>
         <img width="100%" src={imageUrl} alt={product.name}></img>
       </Box>

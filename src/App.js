@@ -1,5 +1,6 @@
 import categoryApi from "api/categoryApi.js";
 import Header from "components/Header/index.jsx";
+import CartFeature from "features/Cart/index.jsx";
 import ProductFeature from "features/Product/index.jsx";
 import React, { useEffect } from "react";
 import { Redirect, Route, Switch } from "react-router";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/todos" component={TodoFeature}></Route>
         <Route path="/album"></Route>
         <Route path='/products' component={ProductFeature} />
+        <Route path='/cart' component={CartFeature} />
         <Route component={NoteFound}></Route>
       </Switch>
     </div>

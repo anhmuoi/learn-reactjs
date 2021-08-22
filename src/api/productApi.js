@@ -22,7 +22,11 @@ const productApi = {
             }
         }
         
-    }
+    },
+    get(id) {
+        const url = `/products/${id}`;
+        return axiosClient.get(url);
+    },
 }
 
 export default productApi;
