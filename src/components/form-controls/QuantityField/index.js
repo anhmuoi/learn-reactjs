@@ -60,7 +60,7 @@ function QuantityField(props) {
           <Box>
             <Typography>Quantity</Typography>
             <IconButton
-              onClick={() => setValue(name, Number.parseInt(field.value) - 1)}
+              onClick={() => setValue(name, Number.parseInt(field.value) - 2)}
             >
               <RemoveCircleOutline></RemoveCircleOutline>
             </IconButton>

@@ -8,7 +8,7 @@ const rootReducer = {
   user: userReducer,
   cart: cartReducer,
 };
-a[]
+
 const store = configureStore({
   reducer: rootReducer,
 });
