@@ -27,6 +27,7 @@ function TodoForm(props) {
 
   const handleSubmit = (values) => {
     onSubmit(values);
+    form.reset();
   };
 
   return (
